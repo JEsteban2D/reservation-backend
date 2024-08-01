@@ -27,15 +27,15 @@ public class UserService {
         return userRepository.save(user);
     }
 
-    public RestaurantUser updateUser(Long id, RestaurantUser user) {
-        if (userRepository.existsById(id)) {
-            user.setId(id);
-            return userRepository.save(user);
-        }
-        return null;
-    }
+    // public RestaurantUser updateUser(Long id, RestaurantUser user) {
+    //     if (userRepository.existsById(id)) {
+    //         user.setId(id);
+    //         return userRepository.save(user);
+    //     }
+    //     return null;
+    // }
 
-    public void deleteUser(Long id) {
-        userRepository.deleteById(id);
-    }
+    // public void deleteUser(Long id) {
+    //     userRepository.deleteById(id);
+    // }
 }

@@ -2,6 +2,10 @@ package com.coffe.reservation_coffe.entities;
 
 import java.time.LocalDateTime;
 
+import org.springframework.data.annotation.Transient;
+
+import com.fasterxml.jackson.annotation.JsonBackReference;
+
 import jakarta.persistence.Entity;
 import jakarta.persistence.GeneratedValue;
 import jakarta.persistence.GenerationType;
@@ -17,25 +21,18 @@ public class Reservation {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long id;
-    @ManyToOne
-    @JoinColumn(name = "table_id")
-    private RestaurantTable restaurantTable;
+    private LocalDateTime reservationTime;
+
     @ManyToOne
     @JoinColumn(name = "user_id")
+    @JsonBackReference
     private RestaurantUser restaurantUser;
-    private LocalDateTime reservationTime;
     
     public Long getId() {
         return id;
     }
     public void setId(Long id) {
         this.id = id;
-    }
-    public RestaurantTable getRestaurantTable() {
-        return restaurantTable;
-    }
-    public void setRestaurantTable(RestaurantTable restaurantTable) {
-        this.restaurantTable = restaurantTable;
     }
     public RestaurantUser getUser() {
         return restaurantUser;
