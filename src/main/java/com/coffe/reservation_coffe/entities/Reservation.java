@@ -2,7 +2,7 @@ package com.coffe.reservation_coffe.entities;
 
 import java.time.LocalDateTime;
 
-import org.springframework.data.annotation.Transient;
+// import org.springframework.data.annotation.Transient;
 
 import com.fasterxml.jackson.annotation.JsonBackReference;
 
