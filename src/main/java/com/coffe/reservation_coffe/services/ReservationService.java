@@ -32,9 +32,4 @@ public class ReservationService {
         RestaurantUser user = userRepository.findById(userId).orElse(null);
         return user != null ? new ArrayList<>(user.getReservations()) : null;
     }
-
-    // public void deleteReservation(Long id){
-    //     reservationRepository.deleteById(id);
-    // }
-
 }
